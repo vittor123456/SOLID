@@ -5,6 +5,9 @@ import java.math.RoundingMode;
 
 import model.Funcionario;
 
+/**
+ * Na inversao de dependencia, a implementacao depende da abstracao
+ */
 public class ValidacaoPercentualReajuste implements ValidacaoReajuste{
   
   public void validar(Funcionario funcionario,BigDecimal aumento) {

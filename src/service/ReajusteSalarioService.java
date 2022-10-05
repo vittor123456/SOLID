@@ -8,6 +8,9 @@ import validacao.ValidacaoReajuste;
 
 public class ReajusteSalarioService {
 
+  /**
+   * Inversao de Depencia, A classe ReajusteSalarioService (implementacao) depende da abstracao ValidacaoReajuste (interface) e não das implementações desta interface.
+   */
   private List<ValidacaoReajuste> validacoes;
 
   public ReajusteSalarioService(List<ValidacaoReajuste> validacoes) {

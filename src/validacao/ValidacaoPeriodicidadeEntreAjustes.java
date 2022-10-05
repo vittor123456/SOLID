@@ -7,7 +7,7 @@ import java.time.temporal.ChronoUnit;
 import model.Funcionario;
 
 /**
- * ValidacaoPeriodicidadeEntreAjustes
+ * Na inversao de dependencia, a implementacao depende da abstracao
  */
 public class ValidacaoPeriodicidadeEntreAjustes implements ValidacaoReajuste{
 
