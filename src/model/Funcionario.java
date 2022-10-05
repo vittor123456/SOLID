@@ -4,15 +4,12 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Funcionario {
-  private String nome;
-  private Cargo cargo;
-  private BigDecimal salario;
+
   private LocalDate dataUltimoReajuste;
+  private DadosPessoais dadosPessoais;
 
   public Funcionario(String nome, Cargo cargo, BigDecimal salario) {
-    this.nome = nome;
-    this.cargo = cargo;
-    this.salario = salario;
+    dadosPessoais = new DadosPessoais(nome, cargo, salario);
   }
 
   public LocalDate getDataUltimoReajuste() {
@@ -24,31 +21,35 @@ public class Funcionario {
   }
 
   public String getNome() {
-    return nome;
+    return dadosPessoais.getNome();
   }
 
   public void setNome(String nome) {
-    this.nome = nome;
+    dadosPessoais.setNome(nome);
   }
 
   public Cargo getCargo() {
-    return cargo;
+    return dadosPessoais.getCargo();
   }
 
   public void setCargo(Cargo cargo) {
-    this.cargo = cargo;
+    dadosPessoais.setCargo(cargo);
   }
 
   public BigDecimal getSalario() {
-    return salario;
+    return dadosPessoais.getSalario();
   }
 
   public void setSalario(BigDecimal salario) {
-    this.salario = salario;
+    dadosPessoais.setSalario(salario);
   }
 
   public void atualizarSalario(BigDecimal salarioReajustado) {
-    this.salario = salarioReajustado;
+    dadosPessoais.setSalario(salarioReajustado);
     this.dataUltimoReajuste = LocalDate.now();
+  }
+
+  public void promover(Cargo novoCargo) {
+    dadosPessoais.setCargo(novoCargo);
   }
 }
