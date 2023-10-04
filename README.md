@@ -32,3 +32,17 @@ A ideia é, embora reajuste e salário estejam relacionados com o funcionário, 
 Pode ser que amanhã mude esse percentual, pode ser que tenham novas regras. Então esse trecho de código poderia estar isolado em uma outra classe. Isso daqui poderia estar separado para melhorar a coesão em um local onde fique responsável apenas por fazer essa validação de reajuste. [https://github.com/marmundo/SOLID/commit/eb29cca0bd1fc95a2fef0caa1c93bbf3b02fabd8]
 
 ### Principio de Aberto/Fechado
+
+Retira a lógica de validacao da classe torna as validacoes abertas para extensoes e fechadas para modificações. Cada nova validacao deve implementar a interface
+
+### Princípio de Liskov
+
+Foi criado uma nova regra de negocio para promover um funcionário e um novo modelo de funcionario que é o tercerizado. O tercerizado parece um funcionario mas não é. Isto é devido a empresa que o contrata que ajusta seu salario e o promove e não a empresa contratante. Desta forma, tercerizado não pode herdar de funcionario. Assim, a melhor forma foi criar uma classe que contém os atributos comuns a Funcionario e Tercerizado (Dados Pessoais) e fazer com que Funcionario e Tercerizado sejam compostos por Dados Pessoais
+
+### Princípio de Segregação de Interface
+
+Nenhuma classe é obrigada a implementar métodos que não são necessários devido a interfaces. Neste caso foi necessário criar a interface ReajusteTributavel com apenas um método para Reajustes Tributaveis. No exemplo Anuenio que é tributável, tem que implementar reajuste (métodos de valor e data) e o Tributavel. Já o Promocao, não tirbutável, implementa apenas a interface Reajuste
+
+### Princípio de Inversão de Dependência
+
+Na inversao de dependencia, a implementacao depende da abstracao. Toda classe deve implementar uma interface. As classes que utilizam o servico de uma classe deve depender da interface e não da implementação da interface.
