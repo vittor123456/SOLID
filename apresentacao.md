@@ -733,10 +733,6 @@ Interruptor int3 = new Interruptor(new ArCondicionado());
 
 **Objetivo:** Fixar os conceitos SOLID através de análise de código!
 
-**Tempo:** 15-20 minutos
-
-**Formato:** Individual ou em duplas
-
 ---
 
 ### Cenário: Sistema de Biblioteca
